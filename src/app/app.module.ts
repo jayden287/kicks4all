@@ -44,6 +44,8 @@ import { LoginComponent } from './authenication/login/login.component';
 import { LogoutComponent } from './authenication/logout/logout.component';
 import { UserComponent } from './authenication/user/user.component';
 import { AdminComponent } from './authenication/admin/admin.component';
+import { RouterModule } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +90,125 @@ import { AdminComponent } from './authenication/admin/admin.component';
     FormsModule,
     Ng2SearchPipeModule,
     HttpClientModule,
+    RouterModule.forRoot([
+      {path: '', redirectTo: '/home', pathMatch: 'full'},
+      { path: 'home', component: HomeComponent },
+
+      { path: 'about', component: AboutComponent},
+      //redirect to about page on load
+      { path: '', component: AboutComponent, pathMatch: 'full'},
+    
+    
+      
+      { path: 'lowCut', component: LowCutComponent},
+      //redirect to signup page on load
+      {path: '', component: LowCutComponent, pathMatch: 'full'},
+    
+      { path: 'midCut', component: MidCutComponent},
+      //redirect to signup page on load
+      {path: '', component: MidCutComponent, pathMatch: 'full'},
+    
+      { path: 'highCut', component: HighCutComponent},
+      //redirect to signup page on load
+      {path: '', component: HighCutComponent, pathMatch: 'full'},
+    
+      { path: 'sales', component: SalesComponent},
+      //redirect to signup page on load
+      {path: '', component: SalesComponent, pathMatch: 'full'},
+      
+      { path: 'search', component: SearchComponent},
+      //redirect to signup page on load
+      {path: '', component: SearchComponent, pathMatch: 'full'},
+      
+      
+      { path: 'nike', component: NikeComponent},
+      //redirect to signup page on load
+      {path: '', component: NikeComponent, pathMatch: 'full'},
+      
+      { path: 'adidas', component: AdidasComponent},
+      //redirect to signup page on load
+      {path: '', component: AdidasComponent, pathMatch: 'full'},
+    
+      { path: 'ua', component: UaComponent},
+      //redirect to signup page on load
+      {path: '', component: UaComponent, pathMatch: 'full'},
+    
+      { path: 'puma', component: PumaComponent},
+      //redirect to signup page on load
+      {path: '', component: PumaComponent, pathMatch: 'full'},
+    
+      { path: 'shoeDetails/:id', component: ShoeDetailsComponent},
+      //redirect to signup page on load
+      {path: '', component: ShoeDetailsComponent, pathMatch: 'full'},
+      
+      { path: 'contact', component: ContactComponent},
+      //redirect to signup page on load
+      {path: '', component: ContactComponent, pathMatch: 'full'},
+    
+      { path: 'displayContact', component: DisplayContactComponent, canActivate: [AuthGuard], data:
+      {permission: {only: ["admin"]}}},
+      //redirect to signup page on load
+      {path: '', component: DisplayContactComponent, pathMatch: 'full'},
+    
+      { path: 'lowPrice', component: PriceLowComponent},
+      //redirect to signup page on load
+      {path: '', component: PriceLowComponent, pathMatch: 'full'},
+    
+      { path: 'highPrice', component: PriceHighComponent},
+      //redirect to signup page on load
+      {path: '', component: PriceHighComponent, pathMatch: 'full'},
+    
+      { path: 'pink', component: PinkComponent},
+      //redirect to signup page on load
+      {path: '', component: PinkComponent, pathMatch: 'full'},
+    
+      { path: 'white', component: WhiteComponent},
+      //redirect to signup page on load
+      {path: '', component: WhiteComponent, pathMatch: 'full'},
+    
+      { path: 'blue', component: BlueComponent},
+      //redirect to signup page on load
+      {path: '', component: BlueComponent, pathMatch: 'full'},
+    
+      { path: 'purple', component: PurpleComponent},
+      //redirect to signup page on load
+      {path: '', component: PurpleComponent, pathMatch: 'full'},
+      
+      { path: 'cart', component: CartComponent},
+      //redirect to signup page on load
+      {path: '', component: CartComponent, pathMatch: 'full'},
+      
+      { path: 'shipping', component: ShippingComponent},
+      //redirect to signup page on load
+      {path: '', component: ShippingComponent, pathMatch: 'full'},
+      
+      { path: 'payment', component: PaymentComponent},
+      //redirect to signup page on load
+      {path: '', component: PaymentComponent, pathMatch: 'full'},
+      
+      { path: 'test', component: TestComponent},
+      //redirect to signup page on load
+      {path: '', component: TestComponent, pathMatch: 'full'},
+      
+      { path: 'register', component: RegisterComponent},
+    
+      
+      { path: 'login', component: LoginComponent},
+      //redirect to signup page on load
+      
+      { path: 'logout', component: LogoutComponent},
+      //redirect to signup page on load
+      
+      { path: 'user', component: UserComponent, canActivate: [AuthGuard], data:
+      {permission: {only: ["user", "admin"]}}},
+      //redirect to signup page on load
+      
+      { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data:
+      {permission: {only: ["admin"]}}},
+      //redirect to signup page on load
+      {path: '', component: LoginComponent, pathMatch: 'full'},
+    
+    ])
     
     
   ],
