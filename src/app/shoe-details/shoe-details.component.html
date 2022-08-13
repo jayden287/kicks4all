@@ -1,0 +1,49 @@
+<div *ngIf="shoeParts">
+  <main class="container">
+
+
+    <section class = "container sproduct my-5 pt-5">
+      <div class = "row-mt-5">
+        <div class = "col-lg-5 col-md-12 col-12">
+          <img class = "img-fluid w-100 pb-1" src = "{{shoeParts.image}}"  alt = "">
+          <div class = "small-img-group">
+            <div class = "small-img-col">
+              <img src = "{{shoeParts.image}}" width = "100%" class = "small-img" alt = "">
+            </div>
+            <div class = "small-img-col" >
+              <img src = "{{shoeParts.image1}}" width = "100%"  class = "small-img" alt = "">
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class = "col-lg-6 col-md-12 col-12">
+      <h6 class = "word"> Home/{{shoeParts.name}}</h6>
+      <h3 class = "py-4"> {{shoeParts.colour}}</h3>
+      <h2> ${{shoeParts.price | currency: 'SGD'}}</h2>
+      <select class = "my-3">
+        <option>Select Size</option>
+        <option>US 7 / UK 6</option>
+        <option>US 7.5 / UK 6</option>
+        <option>US 8 / UK 7</option>
+        <option>US 8.5 / UK 7.5</option>
+        <option>US 9 / UK 8</option>
+        <option>US 9.5 / UK 8.5</option>
+        <option>US 10 / UK 9</option>
+        <option>US 10.5 / UK 9.5</option>
+        <option>US 11 / UK 10</option>
+        <option>US 11.5 / UK 10.5</option>
+        <option>US 12 / UK 11</option>
+      </select>
+      <input class = "test" type = "number" value = "1">
+     <button type = "button" (click)="addToCart(shoeParts)" class = "cart_btn">Add To Cart</button>
+      <h4 class = "mt-5 mb-5">Shoe Details</h4>
+      <span class = "test1">{{shoeParts.description}}</span>
+    </div>
+
+    
+  
+  </main>
+</div> 

@@ -1,0 +1,67 @@
+<!--doing angular lifecycle hook for fweb can get u SDL marks-->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div id="main-content" class="file_manager">  <div class = "row">
+    <div class="col">
+      
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Filter</button>
+        
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <h5>Shoe Cutting</h5>
+
+          <button ngbDropdownItem class = "nav-link" routerLink = "/lowCut" routerLinkACtive = "active" id = 1>Low-cut</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/midCut" routerLinkACtive = "active" id = 2>Mid-cut</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/highCut" routerLinkACtive = "active" id = 3>High-cut</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/sales" routerLinkACtive = "active">Sales</button>
+          <h5>Brand</h5>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/nike" routerLinkACtive = "active">Nike</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/adidas" routerLinkACtive = "active">Adidas</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/ua" routerLinkACtive = "active">Under Armour</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/puma" routerLinkACtive = "active">Puma</button>
+
+          <h5>Sort</h5>          
+          <button ngbDropdownItem class = "nav-link" routerLink = "/lowPrice" routerLinkACtive = "active" value = "l2h">Low To High</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/highPrice" routerLinkACtive = "active" value = "h2l">High To Low</button>
+
+          <h5>Colour</h5>          
+          <button ngbDropdownItem class = "nav-link" routerLink = "/pink" routerLinkACtive = "active" >Pink</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/white" routerLinkACtive = "active" >White</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/blue" routerLinkACtive = "active" >Blue</button>
+          <button ngbDropdownItem class = "nav-link" routerLink = "/purple" routerLinkACtive = "active" >Purple</button>
+
+          
+ 
+
+  
+        </div>
+        </div>
+      </div>
+      </div>
+    <div class="container">
+        <div class="row h-100">
+            <div class="col-md-12 ">
+                <ul class = "nav justify-content-center">
+                        <ul class = "nav justify-content-center"></ul>
+                        <div class="file col-md-6" *ngFor = "let shoePart of shoes | callback: findSales" [routerLink]="['/shoeDetails', shoePart.id]">
+                            <div class="image">
+                            <a class = "nav-link" [routerLink]="['/shoeDetails', shoePart.id]"routerLinkActive = "active">
+                            <img src={{shoePart.image}} alt="img" class="img-fluid">
+                            </a>
+                        </div>
+                        
+                        <div class="file-name">
+                            <h4 class="m-b-5 text-muted">{{shoePart.name}}</h4>
+                            <small *ngIf="shoePart.inStock > 0">{{shoePart.inStock}} in Stock 
+                                <span class="date text-muted"> ${{shoePart.price | currency: 'SGD'}}</span></small>
+                        </div>
+                        </div>
+            
+                
+                </ul>
+             
+            </div>
+        </div>
+    </div>
+</div>
+
+                       

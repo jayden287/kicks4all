@@ -1,0 +1,24 @@
+<div class = "container overflow-hidden style">
+    <div class="form-group">
+      <input
+        type="text" 
+        class="form-control"
+        placeholder="Search by ID, Shoe Name, Color or Brand"
+        [(ngModel)]="searchText"
+      />
+    </div>
+
+  </div>
+  <div class="products products-table" *ngFor = "let shoePart of shoes | filter: searchText" [routerLink]="['/shoeDetails', shoePart.id]">
+    <div class="product">
+        <div class="product-img">
+            <img src={{shoePart.image}}>
+        </div>
+        <div class="product-content">
+            <h3>
+                {{shoePart.name}}
+                <small>{{shoePart.colour}}</small>
+            </h3>
+            <p class="product-text price">${{shoePart.price | currency: 'SGD'}}</p>
+        </div>
+    </div>

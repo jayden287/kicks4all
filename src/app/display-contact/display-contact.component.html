@@ -1,0 +1,23 @@
+<div style = "text-align: center" class = "container overflow-hidden style">
+    <h1> List of Contacts (Admin) </h1>
+</div>
+
+<table class = "table">
+    <thead class = "thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let shoe of contacts'>
+            <td>{{shoe.name}}</td>
+            <td>{{shoe.email}}</td>
+            <td>{{shoe.subject}}</td>
+          <p><a href="javascript:void(0)" 
+            (click)="deleteContact(shoe._id)" class="card-link">Delete</a></p>  
+
+        </tr>
+    </tbody>
+</table>

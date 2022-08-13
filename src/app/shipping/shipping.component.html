@@ -1,0 +1,9 @@
+<h3>Shipping Prices</h3>
+
+
+  <div class="card">
+    <div class="card-body" *ngFor = "let shipping of shippingCosts | async">
+        <h5 class="card-title">{{shipping.type}}</h5>
+        <p class="card-text">{{ shipping.price | currency }}</p>
+    </div>
+  </div>
