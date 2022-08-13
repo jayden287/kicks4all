@@ -39,14 +39,12 @@ const routes: Routes = [
 
   { path: 'about', component: AboutComponent},
   //redirect to about page on load
-  { path: '', component: AboutComponent, pathMatch: 'full'},
 
 
   
   { path: 'lowCut', component: LowCutComponent},
   //redirect to signup page on load
   {path: '', component: LowCutComponent, pathMatch: 'full'},
-
   { path: 'midCut', component: MidCutComponent},
   //redirect to signup page on load
   {path: '', component: MidCutComponent, pathMatch: 'full'},
