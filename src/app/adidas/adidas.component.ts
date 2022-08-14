@@ -20,7 +20,6 @@ export class AdidasComponent implements OnInit{
    }
   ngOnInit() {
     this.myForm = this.fb.group({
-      id: '',
     name: '',
     colour: '',
     price: '',
@@ -33,7 +32,7 @@ export class AdidasComponent implements OnInit{
     });
     }
     onSubmit(){
-      this.postsService.insertShoe(this.myForm.value.id, this.myForm.value.name,
+      this.postsService.insertShoe( this.myForm.value.name,
       this.myForm.value.colour,  this.myForm.value.price, this.myForm.value.inStock, this.myForm.value.image, this.myForm.value.image1, this.myForm.value.brand, this.myForm.value.cutting, this.myForm.value.description).subscribe(results => {
       location.reload();
       });

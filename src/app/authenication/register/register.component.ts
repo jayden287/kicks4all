@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
 import { passwordMatchValidator } from './custom.validator';
 import { myUser } from '../myUser';
+import { UserserviceService } from 'src/app/userservice.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,13 +19,12 @@ export class RegisterComponent implements OnInit {
     private router: Router) { }
 
     ngOnInit() {
-      this.myForm = this.fb.group({
-      name: ['', Validators.required],
-      password: ['', Validators.required],
-     
-      role: ['', [Validators.required, Validators.email]],
+      this.myForm = new FormGroup({
+        'name': new FormControl(null, Validators.required, ),
+        'password': new FormControl(null, [Validators.required, Validators.minLength(3)]),
+        'role': new FormControl(null,[Validators.required, Validators.maxLength(5)] ),
 
-      });
+      })
       
       } 
        onSubmit() {

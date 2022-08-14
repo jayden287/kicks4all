@@ -46,6 +46,7 @@ import { UserComponent } from './authenication/user/user.component';
 import { AdminComponent } from './authenication/admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { UserserviceService } from './userservice.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -212,7 +213,7 @@ import { AuthGuard } from './auth.guard';
     
     
   ],
-  providers: [ ShoesService, ContactService, AuthService],
+  providers: [ ShoesService, ContactService, AuthService, UserserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

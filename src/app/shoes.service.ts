@@ -42,7 +42,7 @@ export class ShoesService {
     var description = (document.getElementById(_id+'_description') as
     HTMLInputElement).value;
   
-    this.postsService.updateShoe(_id, name, colour,  parseInt(price), parseInt(inStock), image, image1, brand,cutting,description
+    this.postsService.updateShoe( _id,name, colour,  parseInt(price), parseInt(inStock), image, image1, brand,cutting,description
     ).subscribe(results => {
     location.reload();
     });

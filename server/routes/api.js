@@ -34,15 +34,15 @@ router.route('/shoes').get(function (req, res) {
 
 // retrieve all shoes
 // update post based on id
-router.route('/shoes/:id').put(function(req, res) {
-    db.collection('shoes').updateOne( {"id": ObjectId(req.params.id)}, {
-    $set: req.body }, (err, results) => {
+router.route('/shoes/:_id').put(function (req, res) {
+  db.collection('shoes').updateOne(
+    { "_id": ObjectId(req.params._id) }, { $set: req.body }, (err, results) => {
     res.send(results);
-    });
-    });
+  });
+});
     // delete post based on id
-    router.route('/shoes/:id').delete(function(req, res) {
-    db.collection('shoes').deleteOne( {"id": ObjectId(req.params.id)}, (err,
+    router.route('/shoes/:_id').delete(function(req, res) {
+    db.collection('shoes').deleteOne( {"_id": ObjectId(req.params._id)}, (err,
     results) => {
     res.send(results);
     });

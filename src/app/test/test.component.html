@@ -3,7 +3,6 @@
 
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
 <p>Create Shoe</p>
-      <input formControlName="id" id="id" placeholder="id">
     <input formControlName="name" id="name" placeholder="name">
     <input formControlName="colour" id="colour" placeholder="colour">
     <input formControlName="price" id="price" placeholder="price">
@@ -32,27 +31,27 @@
         <p class="card-text">{{post.cutting}}</p>
         <p class="card-text">{{post.description}}</p>
         <input type="text" class="card-title" value={{post.name}}
-        id={{post.id}}_name>
+        id={{post._id}}_name>
         <input type="text" class="card-title" value={{post.colour}}
-        id={{post.id}}_colour>
+        id={{post._id}}_colour>
       
         <input type="number"class="card-text" value={{post.price}}
-        id={{post.id}}_price>
+        id={{post._id}}_price>
         <input type="number"class="card-text" value={{post.inStock}}
-        id={{post.id}}_inStock>
+        id={{post._id}}_inStock>
         <input type="text" class="card-title" value={{post.image}}
-        id={{post.id}}_image>
+        id={{post._id}}_image>
         <input type="text" class="card-title" value={{post.image1}}
-        id={{post.id}}_image1>
+        id={{post._id}}_image1>
         <input type="text" class="card-title" value={{post.brand}}
-        id={{post.id}}_brand>
+        id={{post._id}}_brand>
         <input type="text" class="card-title" value={{post.cutting}}
-        id={{post.id}}_cutting>
+        id={{post._id}}_cutting>
         <input type="text" class="card-title" value={{post.description}} 
-        id={{post.id}}_description>
+        id={{post._id}}_description>
         <a href="javascript:void(0)" 
-          (click)="deleteShoe(post.id)" class="card-link">Delete </a>
-          <a href="javascript:void(0)" (click)="updateShoe(post.id)" class="card-
+          (click)="deleteShoe(post._id)" class="card-link">Delete </a>
+          <a href="javascript:void(0)" (click)="updateShoe(post._id)" class="card-
           link">Update</a>
       </div>      
 </ul>

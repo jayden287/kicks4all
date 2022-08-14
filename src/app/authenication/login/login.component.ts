@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
+import { myUser } from '../myUser';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,16 +10,18 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class LoginComponent implements OnInit {
   myForm: FormGroup;
- results: any = false;
-
+  agreed = false;
+  newUser !: myUser; 
+results: any = false;
   constructor(private fb: FormBuilder, private authService: AuthService,
     private router: Router) { }
 
   ngOnInit() {
-    this.myForm = this.fb.group ({
-      name: '',
-      password: ''
-      });
+    this.myForm = new FormGroup({
+      'name': new FormControl(null, Validators.required, ),
+      'password': new FormControl(null, [Validators.required, Validators.minLength(3)]),
+
+    })
   }
   onSubmit() {
     this.authService.authUser(this.myForm.value.name,

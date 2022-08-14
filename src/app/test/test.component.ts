@@ -21,7 +21,6 @@ export class TestComponent implements OnInit{
     }
     ngOnInit() {
     this.myForm = this.fb.group({
-    id: '',
     name: '',
     colour: '',
     price: '',
@@ -36,7 +35,7 @@ export class TestComponent implements OnInit{
     });
     }
     onSubmit(){
-    this.postsService.insertShoe(this.myForm.value.id, this.myForm.value.name,
+    this.postsService.insertShoe( this.myForm.value.name,
     this.myForm.value.colour,  this.myForm.value.price, this.myForm.value.inStock, this.myForm.value.image, this.myForm.value.image1, this.myForm.value.brand, this.myForm.value.cutting, this.myForm.value.description).subscribe(results => {
     location.reload();
     });
@@ -46,13 +45,14 @@ export class TestComponent implements OnInit{
         this.shoes = shoes;
         });
     }
-    deleteShoe(_id: number) {
-      this.postsService.deleteShoe(_id).subscribe(results => {
+    deleteShoe(id: number) {
+      this.postsService.deleteShoe(id).subscribe(results => {
         location.reload();
       });
     }
      // Update function
      updateShoe(_id: number) {
+    
       var name = (document.getElementById(_id+'_name') as
       HTMLInputElement).value;
       var colour = (document.getElementById(_id+'_colour') as

@@ -10,15 +10,18 @@
                    
                   <h1>Register</h1>
               
-                  <input formControlName = "name" type="text" id="name" placeholder="Your name..">
+                  <input formControlName = "name" type="text" id="name" class = "form-control" placeholder="Your name..">
+                  <small *ngIf = "myForm.get('name').invalid && myForm.get('name').touched" class = "text-danger">Name is required!</small>
               
-                  <input formControlName = "password" type="text" id="password" placeholder="Your password..">
-        
-                  <input formControlName = "role" type="text" id="role" placeholder="user/admin">
-              
+                  <input formControlName = "password" type="text" id="password" class = "form-control" placeholder="Your password..">
+                  <small *ngIf = "myForm.get('password').invalid && myForm.get('password').touched" class = "text-danger">Password needs to have a minimum of 3 characters!</small>
+
+                  <input formControlName = "role" type="text" id="role"  class = "form-control" placeholder="user/admin">
+                  <small *ngIf = "myForm.get('role').invalid && myForm.get('role').touched" class = "text-danger">Please Input user/admin</small>
+
                 
               
-                  <input type="submit" value="Register">
+                  <p><button class="btn btn-primary" type="submit" [disabled]="myForm.invalid" >Register</button>
               
                 </form>
               </div>

@@ -127,7 +127,8 @@ const routes: Routes = [
   //redirect to signup page on load
   {path: '', component: PaymentComponent, pathMatch: 'full'},
   
-  { path: 'test', component: TestComponent},
+  { path: 'test', component: TestComponent, canActivate: [AuthGuard], data:
+  {permission: {only: ["admin"]}}},
   //redirect to signup page on load
   {path: '', component: TestComponent, pathMatch: 'full'},
   

@@ -21,8 +21,8 @@ export class PostsService {
       return [];
     }));
   }
-  insertShoe(newid: number, name: string, colour: string,  newprice: number, newstock: number, image: string, image1: string, brand: string, cutting: string, description: string) {
-    return this.http.post<any[]>(this.url, {'id': newid, 'name': name, 'colour': colour, 'price': newprice, 'inStock': newstock, 'image':image, 'image1': image1, 'brand': brand, 'cutting': cutting, 'description': description });
+  insertShoe( name: string, colour: string,  newprice: number, newstock: number, image: string, image1: string, brand: string, cutting: string, description: string) {
+    return this.http.post<any[]>(this.url, { 'name': name, 'colour': colour, 'price': newprice, 'inStock': newstock, 'image':image, 'image1': image1, 'brand': brand, 'cutting': cutting, 'description': description });
     }
     //perform HTTP delete request to /api/shoes
 deleteShoe(id: number) {
@@ -33,9 +33,9 @@ deleteShoe(id: number) {
   }
   //perform HTTP put request to /api/shoes/_id
 updateShoe(id: number, name: string, colour: string, newprice: number, newstock: number, image: string, image1: string, brand: string, cutting: string, description: string) {
-  return this.http.put<any[]>(this.url + "/" + id, {'id': id, 'name': name, 'colour': colour, 'price': newprice, 'inStock': newstock, 'image':image, 'image1': image1, 'brand': brand, 'cutting': cutting, 'description': description });
+  return this.http.put<any[]>(this.url + "/" + id,  {'name': name, 'colour': colour, 'price': newprice, 'inStock': newstock, 'image':image, 'image1': image1, 'brand': brand, 'cutting': cutting, 'description': description });
   }
-
+ 
  
 }
 

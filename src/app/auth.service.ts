@@ -8,6 +8,7 @@ export class AuthService {
   regUserUrl:string = "http://localhost:3000/api/reguser/";
   authuser:string = "http://localhost:3000/api/authuser/";
   constructor(private http: HttpClient) { }
+
   regUser(username: string, pw: string, role: string) {
     return this.http.post<any[]>(this.regUserUrl, { 'username': username,
    'password': pw, 'role': role });
