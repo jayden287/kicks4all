@@ -78,7 +78,7 @@ export class UaComponent implements OnInit{
    
   }
   findUnderArmour(shoePart: any): any {
-    return shoePart.brand == 'Under Armour';
+    return shoePart.brand == 'under armour';
   }
 
 }

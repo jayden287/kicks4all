@@ -77,6 +77,6 @@ export class PumaComponent implements OnInit{
    
   }
   findPuma(shoePart: any): any {
-    return shoePart.brand == 'Puma';
+    return shoePart.brand == 'puma';
   }
 }

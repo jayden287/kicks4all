@@ -15,8 +15,7 @@ import { PumaComponent } from './puma/puma.component';
 import { ShoeDetailsComponent } from './shoe-details/shoe-details.component';
 import { ContactComponent } from './contact/contact.component';
 import { DisplayContactComponent } from './display-contact/display-contact.component';
-import { PriceLowComponent } from './price-low/price-low.component';
-import { PriceHighComponent } from './price-high/price-high.component';
+
 import { PinkComponent } from './pink/pink.component';
 import { WhiteComponent } from './white/white.component';
 import { BlueComponent } from './blue/blue.component';
@@ -26,10 +25,8 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { PaymentComponent } from './payment/payment.component';
 import { TestComponent } from './test/test.component';
 import { RegisterComponent } from './authenication/register/register.component';
-import { AdminComponent } from './authenication/admin/admin.component';
 import { LoginComponent } from './authenication/login/login.component';
 import { LogoutComponent } from './authenication/logout/logout.component';
-import { UserComponent } from './authenication/user/user.component';
 import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
@@ -57,7 +54,8 @@ const routes: Routes = [
   //redirect to signup page on load
   {path: '', component: SalesComponent, pathMatch: 'full'},
   
-  { path: 'search', component: SearchComponent},
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard], data:
+  {permission: {only: ["user"]}}},
   //redirect to signup page on load
   {path: '', component: SearchComponent, pathMatch: 'full'},
   
@@ -91,14 +89,7 @@ const routes: Routes = [
   //redirect to signup page on load
   {path: '', component: DisplayContactComponent, pathMatch: 'full'},
 
-  { path: 'lowPrice', component: PriceLowComponent},
-  //redirect to signup page on load
-  {path: '', component: PriceLowComponent, pathMatch: 'full'},
-
-  { path: 'highPrice', component: PriceHighComponent},
-  //redirect to signup page on load
-  {path: '', component: PriceHighComponent, pathMatch: 'full'},
-
+ 
   { path: 'pink', component: PinkComponent},
   //redirect to signup page on load
   {path: '', component: PinkComponent, pathMatch: 'full'},
@@ -141,14 +132,10 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent},
   //redirect to signup page on load
   
-  { path: 'user', component: UserComponent, canActivate: [AuthGuard], data:
-  {permission: {only: ["user", "admin"]}}},
+  //{ path: 'user', component: UserComponent, canActivate: [AuthGuard], data:
+  //{permission: {only: ["user", "admin"]}}},
   //redirect to signup page on load
   
-  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data:
-  {permission: {only: ["admin"]}}},
-  //redirect to signup page on load
-  {path: '', component: LoginComponent, pathMatch: 'full'},
 
   
   

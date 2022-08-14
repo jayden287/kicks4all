@@ -28,8 +28,7 @@ import { ShoeDetailsComponent } from './shoe-details/shoe-details.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './contact.service';
 import { DisplayContactComponent } from './display-contact/display-contact.component';
-import { PriceLowComponent } from './price-low/price-low.component';
-import { PriceHighComponent } from './price-high/price-high.component';
+
 import { PinkComponent } from './pink/pink.component';
 import { BlueComponent } from './blue/blue.component';
 import { WhiteComponent } from './white/white.component';
@@ -42,8 +41,7 @@ import { TestComponent } from './test/test.component';
 import { RegisterComponent } from './authenication/register/register.component';
 import { LoginComponent } from './authenication/login/login.component';
 import { LogoutComponent } from './authenication/logout/logout.component';
-import { UserComponent } from './authenication/user/user.component';
-import { AdminComponent } from './authenication/admin/admin.component';
+
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { UserserviceService } from './userservice.service';
@@ -66,8 +64,7 @@ import { UserserviceService } from './userservice.service';
     ShoeDetailsComponent,
     ContactComponent,
     DisplayContactComponent,
-    PriceLowComponent,
-    PriceHighComponent,
+
     PinkComponent,
     BlueComponent,
     WhiteComponent,
@@ -79,8 +76,7 @@ import { UserserviceService } from './userservice.service';
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
-    UserComponent,
-    AdminComponent,
+ 
 
   ],
   imports: [
@@ -151,13 +147,7 @@ import { UserserviceService } from './userservice.service';
       //redirect to signup page on load
       {path: '', component: DisplayContactComponent, pathMatch: 'full'},
     
-      { path: 'lowPrice', component: PriceLowComponent},
-      //redirect to signup page on load
-      {path: '', component: PriceLowComponent, pathMatch: 'full'},
-    
-      { path: 'highPrice', component: PriceHighComponent},
-      //redirect to signup page on load
-      {path: '', component: PriceHighComponent, pathMatch: 'full'},
+
     
       { path: 'pink', component: PinkComponent},
       //redirect to signup page on load
@@ -200,12 +190,7 @@ import { UserserviceService } from './userservice.service';
       { path: 'logout', component: LogoutComponent},
       //redirect to signup page on load
       
-      { path: 'user', component: UserComponent, canActivate: [AuthGuard], data:
-      {permission: {only: ["user", "admin"]}}},
-      //redirect to signup page on load
-      
-      { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data:
-      {permission: {only: ["admin"]}}},
+
       //redirect to signup page on load
       {path: '', component: LoginComponent, pathMatch: 'full'},
     
